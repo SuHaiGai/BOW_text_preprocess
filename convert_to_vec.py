@@ -46,7 +46,7 @@ def is_uchar(uchar):
             return True
     #判断一个unicode是否是数字,是数字则过滤掉
     if uchar >= u'\u0030' and uchar<=u'\u0039':
-            return False        
+            return False
     #判断一个unicode如果是英文字母，则过滤掉
     if (uchar >= u'\u0041' and uchar<=u'\u005a') or (uchar >= u'\u0061' and uchar<=u'\u007a'):
             return False
@@ -104,15 +104,15 @@ def convert_to_vec(input_directory_name):
                                                  path.split('/')[-1]), 'wb')
         #对原始文本进行分词
         for line in f:
-            words = jieba.cut(line) 
-            for word in words:     
+            words = jieba.cut(line)
+            for word in words:
                 # print word, flag
                 f_seg.write(word.encode("utf-8"))
                 f_seg.write(" ")
-            # if line.strip().split() !="": #去除字符串两端的空格后，判断该行是否还有非空字符内容 
-            #     li = line.strip().split()   
-            #     words = pseg.cut(li) 
-            #     for word, flag in words:     
+            # if line.strip().split() !="": #去除字符串两端的空格后，判断该行是否还有非空字符内容
+            #     li = line.strip().split()
+            #     words = pseg.cut(li)
+            #     for word, flag in words:
             #         print ('%s %s' % (word, flag))
             #         str = flag + ' '
             #         f_pos.write(str.upper())
